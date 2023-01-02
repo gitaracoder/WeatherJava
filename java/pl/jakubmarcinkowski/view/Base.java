@@ -1,12 +1,22 @@
 package pl.jakubmarcinkowski.view;
 
+import com.github.prominence.openweathermap.api.enums.Language;
+import com.github.prominence.openweathermap.api.enums.UnitSystem;
 import com.github.prominence.openweathermap.api.model.forecast.Rain;
+import com.github.prominence.openweathermap.api.model.weather.Weather;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import pl.jakubmarcinkowski.model.FiveDaysWeatherData;
 import pl.jakubmarcinkowski.model.WeatherData;
+
+import com.github.prominence.openweathermap.api.OpenWeatherMapClient;
+import com.github.prominence.openweathermap.api.enums.Language;
+import com.github.prominence.openweathermap.api.enums.UnitSystem;
+import com.github.prominence.openweathermap.api.model.forecast.Forecast;
+import com.github.prominence.openweathermap.api.model.weather.Weather;
 public class Base {
     @FXML
     private LineChart<?, ?> rainChart1;
@@ -31,9 +41,22 @@ public class Base {
     @FXML
     private Text curTemp1;
 
-    WeatherData weatherData = new WeatherData();
-    FiveDaysWeatherData fiveDaysWeatherData = new FiveDaysWeatherData();
+    @FXML
+    private TextField location1;
+
+    OpenWeatherMapClient openWeatherClient = new OpenWeatherMapClient("3e2875ddbebc19351228389a0657f01e");
+
+
+
+
     public void buttonAction(){
+
+
+
+        WeatherData weatherData = new WeatherData(location1.getCharacters().toString());
+
+        FiveDaysWeatherData fiveDaysWeatherData = new FiveDaysWeatherData(location1.getCharacters().toString());
+
 
         curCity1.setText(String.valueOf(weatherData.getWeather().getLocation().getName()));
         curTemp1.setText(String.valueOf(weatherData.getWeather().getTemperature().getValue())+"°C");
@@ -71,7 +94,9 @@ public class Base {
         rainChart1.getXAxis().setTickLabelsVisible(false);
         rainChart1.getXAxis().setOpacity(0);
 
-        //System.out.println(fiveDaysWeatherData.getWeather().getWeatherForecasts().get(1).getRain().getThreeHourLevel()+"");
+
+
+
     }
 
 }

@@ -9,19 +9,28 @@ import com.github.prominence.openweathermap.api.model.forecast.Snow;
 
 public class FiveDaysWeatherData {
 
+    public String cityName;
+
+    public FiveDaysWeatherData(String cityName) {
+        this.cityName = cityName;
+    }
+
     OpenWeatherMapClient openWeatherClient = new OpenWeatherMapClient("3e2875ddbebc19351228389a0657f01e");
 
-    final Forecast forecastWeather = openWeatherClient
-
-            .forecast5Day3HourStep()
-            .byCityName("Gdansk")
-            .language(Language.POLISH)
-            .unitSystem(UnitSystem.METRIC)
-            .count(40)
-            .retrieve()
-            .asJava();
 
     public Forecast getWeather() {
+
+        Forecast forecastWeather = openWeatherClient
+
+                .forecast5Day3HourStep()
+                //.byCityName("Gdansk")
+                .byCityName(cityName)
+                .language(Language.POLISH)
+                .unitSystem(UnitSystem.METRIC)
+                .count(40)
+                .retrieve()
+                .asJava();
+
         return forecastWeather;
     }
 }
