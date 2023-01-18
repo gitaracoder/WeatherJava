@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="background" prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.jakubmarcinkowski.view.Base">
+    <children>
+        <TextField fx:id="location1" layoutX="160.0" layoutY="14.0" prefHeight="25.0" prefWidth="200.0"/>
+        <Button layoutX="381.0" layoutY="14.0" mnemonicParsing="false" onAction="#buttonAction1" text="Szukaj"/>
+        <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wprowadź nazwę miasta"
+              wrappingWidth="150.0"/>
+        <Text fx:id="infoMessage" layoutX="14.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              wrappingWidth="423.0"/>
+        <TextField fx:id="location11" layoutX="946.0" layoutY="15.0" prefHeight="25.0" prefWidth="200.0"/>
+        <Button layoutX="1167.0" layoutY="15.0" mnemonicParsing="false" onAction="#buttonAction11" text="Szukaj"/>
+        <Text layoutX="800.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wprowadź nazwę miasta"
+              wrappingWidth="150.0"/>
+        <TitledPane animated="false" collapsible="false" layoutX="-5.0" layoutY="46.0" prefHeight="273.0"
+                    prefWidth="1603.0" text="Aktualne warunki pogodowe">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="247.0" prefWidth="1500.0"/>
+            </content>
+        </TitledPane>
+        <Text fx:id="curCity1" layoutX="420.0" layoutY="100.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <Text fx:id="curTemp1" layoutX="420.0" layoutY="150.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <Text fx:id="curCloud1" layoutX="420.0" layoutY="300.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <Text fx:id="curPress1" layoutX="420.0" layoutY="250.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <Text fx:id="curHum1" layoutX="420.0" layoutY="200.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <Text layoutX="100.0" layoutY="300.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Zachmurzenie:" wrappingWidth="80.0"/>
+        <Text layoutX="100.0" layoutY="250.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Ciśnienie:" wrappingWidth="80.0"/>
+        <Text layoutX="100.0" layoutY="200.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Wilgotność:" wrappingWidth="80.0"/>
+        <Text layoutX="100.0" layoutY="150.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Temperatura:" wrappingWidth="80.0"/>
+        <Text layoutX="100.0" layoutY="100.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Lokalizacja:" wrappingWidth="80.0"/>
+        <Text layoutX="886.0" layoutY="101.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Lokalizacja:" wrappingWidth="80.0"/>
+        <Text layoutX="886.0" layoutY="151.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Temperatura:" wrappingWidth="80.0"/>
+        <Text layoutX="886.0" layoutY="301.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Zachmurzenie:" wrappingWidth="80.0"/>
+        <Text layoutX="886.0" layoutY="251.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Ciśnienie:" wrappingWidth="80.0"/>
+        <Text layoutX="886.0" layoutY="201.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Wilgotność:" wrappingWidth="80.0"/>
+        <Text fx:id="curTemp11" layoutX="1206.0" layoutY="151.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <Text fx:id="curCloud11" layoutX="1206.0" layoutY="301.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <Text fx:id="curPress11" layoutX="1206.0" layoutY="251.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <Text fx:id="curHum11" layoutX="1206.0" layoutY="201.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <Text fx:id="curCity11" layoutX="1206.0" layoutY="101.0" scaleX="3.0" scaleY="3.0" strokeType="OUTSIDE"
+              strokeWidth="0.0" wrappingWidth="150.0"/>
+        <TitledPane animated="false" collapsible="false" layoutX="-6.0" layoutY="335.0" prefHeight="519.0"
+                    prefWidth="1603.0" text="4 dniowa prognoza pogody">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="277.0" prefWidth="950.0"/>
+            </content>
+        </TitledPane>
+        <LineChart fx:id="tempChart1" layoutX="-2.0" layoutY="368.0" legendVisible="false" prefHeight="150.0"
+                   prefWidth="800.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Temperatura [°C]" prefHeight="109.0" prefWidth="50.0" side="LEFT">
+                    <tickLabelFont>
+                        <Font size="12.0"/>
+                    </tickLabelFont>
+                </NumberAxis>
+            </yAxis>
+            <cursor>
+                <Cursor fx:constant="CROSSHAIR"/>
+            </cursor>
+        </LineChart>
+        <LineChart fx:id="rainChart1" layoutX="-2.0" layoutY="488.0" legendVisible="false" prefHeight="150.0"
+                   prefWidth="800.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Zachmurzenie [%]" prefHeight="109.0" prefWidth="50.0" side="LEFT">
+                    <tickLabelFont>
+                        <Font size="12.0"/>
+                    </tickLabelFont>
+                </NumberAxis>
+            </yAxis>
+            <cursor>
+                <Cursor fx:constant="CROSSHAIR"/>
+            </cursor>
+        </LineChart>
+        <LineChart fx:id="windChart1" layoutX="-2.0" layoutY="608.0" legendVisible="false" prefHeight="250.0"
+                   prefWidth="800.0">
+            <xAxis>
+                <CategoryAxis label="Data / Godzina" side="BOTTOM">
+                    <tickLabelFont>
+                        <Font size="12.0"/>
+                    </tickLabelFont>
+                </CategoryAxis>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Wiatr [km/h]" prefHeight="109.0" prefWidth="50.0" side="LEFT">
+                    <tickLabelFont>
+                        <Font size="12.0"/>
+                    </tickLabelFont>
+                </NumberAxis>
+            </yAxis>
+            <cursor>
+                <Cursor fx:constant="CROSSHAIR"/>
+            </cursor>
+        </LineChart>
+        <LineChart fx:id="tempChart11" layoutX="803.0" layoutY="368.0" legendVisible="false" prefHeight="150.0"
+                   prefWidth="800.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Temperatura [°C]" prefHeight="109.0" prefWidth="50.0" side="LEFT">
+                    <tickLabelFont>
+                        <Font size="12.0"/>
+                    </tickLabelFont>
+                </NumberAxis>
+            </yAxis>
+            <cursor>
+                <Cursor fx:constant="CROSSHAIR"/>
+            </cursor>
+        </LineChart>
+        <LineChart fx:id="rainChart11" layoutX="803.0" layoutY="488.0" legendVisible="false" prefHeight="150.0"
+                   prefWidth="800.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Zachmurzenie [%]" prefHeight="109.0" prefWidth="50.0" side="LEFT">
+                    <tickLabelFont>
+                        <Font size="12.0"/>
+                    </tickLabelFont>
+                </NumberAxis>
+            </yAxis>
+            <cursor>
+                <Cursor fx:constant="CROSSHAIR"/>
+            </cursor>
+        </LineChart>
+        <LineChart fx:id="windChart11" layoutX="803.0" layoutY="608.0" legendVisible="false" prefHeight="250.0"
+                   prefWidth="800.0">
+            <xAxis>
+                <CategoryAxis label="Data / Godzina" side="BOTTOM">
+                    <tickLabelFont>
+                        <Font size="12.0"/>
+                    </tickLabelFont>
+                </CategoryAxis>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Wiatr [km/h]" prefHeight="109.0" prefWidth="50.0" side="LEFT">
+                    <tickLabelFont>
+                        <Font size="12.0"/>
+                    </tickLabelFont>
+                </NumberAxis>
+            </yAxis>
+            <cursor>
+                <Cursor fx:constant="CROSSHAIR"/>
+            </cursor>
+        </LineChart>
+    </children>
+
+</AnchorPane>
