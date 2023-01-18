@@ -3,9 +3,8 @@ package pl.jakubmarcinkowski.model;
 import com.github.prominence.openweathermap.api.OpenWeatherMapClient;
 import com.github.prominence.openweathermap.api.enums.Language;
 import com.github.prominence.openweathermap.api.enums.UnitSystem;
+import com.github.prominence.openweathermap.api.exception.NoDataFoundException;
 import com.github.prominence.openweathermap.api.model.forecast.Forecast;
-import com.github.prominence.openweathermap.api.model.forecast.Rain;
-import com.github.prominence.openweathermap.api.model.forecast.Snow;
 
 public class FiveDaysWeatherData {
 
@@ -20,17 +19,29 @@ public class FiveDaysWeatherData {
 
     public Forecast getWeather() {
 
-        Forecast forecastWeather = openWeatherClient
+        try {
 
-                .forecast5Day3HourStep()
-                //.byCityName("Gdansk")
-                .byCityName(cityName)
-                .language(Language.POLISH)
-                .unitSystem(UnitSystem.METRIC)
-                .count(40)
-                .retrieve()
-                .asJava();
 
-        return forecastWeather;
+            Forecast forecastWeather = openWeatherClient
+
+
+                    .forecast5Day3HourStep()
+                    //.byCityName("Gdansk")
+                    .byCityName(cityName)
+                    .language(Language.POLISH)
+                    .unitSystem(UnitSystem.METRIC)
+                    .count(40)
+                    .retrieve()
+                    .asJava();
+
+            return forecastWeather;
+        } catch (NoDataFoundException e) {
+
+            System.out.println("Nie rozpoznano miasta!");
+            return null;
+
+        }
+
+
     }
 }
