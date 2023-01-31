@@ -12,6 +12,7 @@ module Test1 {
 
     opens pl.jakubmarcinkowski;
 
-    opens pl.jakubmarcinkowski.view;
+    opens pl.jakubmarcinkowski.controller;
+    opens pl.jakubmarcinkowski.model;
 
 }

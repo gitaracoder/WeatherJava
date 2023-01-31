@@ -1,4 +1,4 @@
-package pl.jakubmarcinkowski.view;
+package pl.jakubmarcinkowski.controller;
 
 import com.github.prominence.openweathermap.api.OpenWeatherMapClient;
 import javafx.fxml.FXML;
@@ -7,13 +7,15 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import pl.jakubmarcinkowski.model.FiveDaysWeatherData;
-import pl.jakubmarcinkowski.model.WeatherData;
+import pl.jakubmarcinkowski.model.CurrentWeatherData;
+
+
 
 import java.util.Collections;
 import java.util.prefs.Preferences;
 
 
-public class Base {
+public class MainWindow {
 
     @FXML
     private Text curCity1;
@@ -103,13 +105,13 @@ public class Base {
         location2Name = getPreference("City2");
         location1.setText(location1Name);
         location11.setText(location2Name);
-        city1Action(location1Name);
-        city2Action(location2Name);
+       // city1Action(location1Name);
+       // city2Action(location2Name);
     }
 
     public void city1Action(String cityName) {
 
-        WeatherData weatherData = new WeatherData(cityName);
+        CurrentWeatherData weatherData = new CurrentWeatherData(cityName);
         FiveDaysWeatherData fiveDaysWeatherData = new FiveDaysWeatherData(cityName);
 
         curCity1.setText(weatherData.getWeather().getLocation().getName() + ", " + weatherData.getWeather().getLocation().getCountryCode());
@@ -151,7 +153,7 @@ public class Base {
 
     public void city2Action(String cityName) {
 
-        WeatherData weatherData = new WeatherData(location11.getCharacters().toString());
+        CurrentWeatherData weatherData = new CurrentWeatherData(location11.getCharacters().toString());
         FiveDaysWeatherData fiveDaysWeatherData = new FiveDaysWeatherData(location11.getCharacters().toString());
 
         curCity11.setText(weatherData.getWeather().getLocation().getName() + ", " + weatherData.getWeather().getLocation().getCountryCode());

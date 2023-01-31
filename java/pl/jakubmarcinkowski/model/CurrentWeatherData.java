@@ -6,13 +6,13 @@ import com.github.prominence.openweathermap.api.enums.UnitSystem;
 import com.github.prominence.openweathermap.api.exception.NoDataFoundException;
 import com.github.prominence.openweathermap.api.model.weather.Weather;
 
-public class WeatherData {
+public class CurrentWeatherData {
 
 
     public String cityName;
     public boolean state;
 
-    public WeatherData(String cityName) {
+    public CurrentWeatherData(String cityName) {
         this.cityName = cityName;
     }
 
